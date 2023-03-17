@@ -1,5 +1,6 @@
 #include <stdio.h>
 /**
+ *
  * main - Entry point
  *
  * Return: Always 0 (Success)
@@ -7,14 +8,11 @@
  **/
 int main(void)
 {
-	char c = 'a';
-
-	while (c <= 'z')
+	int x = 0;
+	
+	while (x < 0)
 	{
-		if (c != 'e' && c != 'q')
-			putchar(c);
-		c++;
+		cout << x++;
 	}
-	putchar('\n');
 	return (0);
 }
