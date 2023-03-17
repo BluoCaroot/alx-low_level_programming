@@ -13,7 +13,10 @@ int main(void)
 	{
 		putchar(c);
 		if (c == 'z')
+		{
 			c = 'A';
+			continue;
+		}
 		if (c == 'Z')
 			break;
 		c++;
