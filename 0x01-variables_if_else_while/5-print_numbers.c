@@ -12,7 +12,7 @@ int main(void)
 	
 	while (x < 0)
 	{
-		cout << x++;
+		printf("%d", x++);
 	}
 	return (0);
 }
