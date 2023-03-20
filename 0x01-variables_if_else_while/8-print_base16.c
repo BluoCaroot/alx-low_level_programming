@@ -11,7 +11,7 @@ int main(void)
 	while (x <= 'f')
 	{
 		putchar(x++);
-		if (x > '9')
+		if (x == ':')
 		{
 			x = 'a';
 		}
