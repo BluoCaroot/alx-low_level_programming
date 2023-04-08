@@ -8,6 +8,10 @@
 
 int main(int argc, char **argv)
 {
-	printf("%d", argc - 1);
+	if (argc)
+	{
+		printf("%d\n", argc - 1);
+		(void)argv;
+	}
 	return (0);
 }
