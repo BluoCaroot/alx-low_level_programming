@@ -8,26 +8,29 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, a, b;
+	unsigned int i, a, b, j;
 	char *ptr;
 
 	a = 0;
-	if (s1 != NULL)
-		while (s1[a] != '\0')
-			a++;
+	while (s1 && s1[a] != '\0')
+		a++;
 	b = 0;
-	if (s2 != NULL)
-		while (s2[b] != '\0')
-			b++;
+	while (s2 && s2[b] != '\0')
+		b++;
 	if (n >= b)
-		n = b;
-	ptr = malloc(a + n + 1);
-	if (ptr == NULL)
+		ptr = malloc(a + b + 1);
+	else
+		ptr = malloc(a + n + 1);
+	if (!ptr)
 		return (NULL);
 	for (i = 0; i < a; ++i)
 		ptr[i] = s1[i];
-	for (; i < a + n; ++i)
-		ptr[i] = s1[i - a];
+	if (n < b)
+		for (j = 0; i < a + n; ++i, j++)
+			ptr[i] = s2[j];
+	else 
+		for (j = 0; i < a + b; ++i, j++)
+			ptr[i] = s2[j];
 	ptr[i] = '\0';
 	return (ptr);
 }
