@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 /**
  * op_add - adds two numbers
  * @a: number to add too
@@ -12,7 +12,7 @@ int op_add(int a, int b)
 
 /**
  * op_sub - subtracts two numbers
- * @a: number to subtract from 
+ * @a: number to subtract from
  * @b: number to subtract
  * Return: difference
  */
