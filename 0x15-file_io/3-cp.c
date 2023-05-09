@@ -4,7 +4,11 @@
 
 char *create_buffer(char *file);
 void close_file(int fd);
-
+/**
+ * create_buffer - creates buffer
+ * @file: file to copy to
+ * Return: bufer
+ */
 
 char *create_buffer(char *file)
 {
@@ -18,6 +22,12 @@ char *create_buffer(char *file)
 	}
 	return (buffer);
 }
+
+/**
+ * close_file - closes file
+ * @fd: file to close
+ */
+
 void close_file(int fd)
 {
 	int c;
@@ -31,6 +41,12 @@ void close_file(int fd)
 	}
 }
 
+/**
+ * main - copies a file
+ * @argc: number of arguments
+ * @argv: arguments
+ * Return: 0 if success
+ */
 
 int main(int argc, char *argv[])
 {
@@ -68,8 +84,8 @@ int main(int argc, char *argv[])
 	} while (r > 0);
 
 	free(BUFF);
-	close(from);
-	close(to);
+	close_file(from);
+	close_file(to);
 
 	return (0);
 
