@@ -6,12 +6,19 @@
  */
 void print_binary(unsigned long int n);
 {
-	while (n)
+	int i, c = 0;
+
+	for (i = 63; i >= 0; --i)
 	{
-		if (n & 1)
+		if (n >> i & 1)
+		{
 			_putchar('1');
-		else
+			c++;
+		}
+		else if (c)
 			_putchar('0');
-		n >>= 1;
 	}
+	if (!c)
+		_putchar('0');
 }
+
