@@ -4,7 +4,7 @@
  * @n: devimal number
  * Return: none
  */
-void print_binary(unsigned long int n);
+void print_binary(unsigned long int n)
 {
 	int i, c = 0;
 
