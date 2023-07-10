@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 		w = write(t, buff, r);
 		if (t == -1 || w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
