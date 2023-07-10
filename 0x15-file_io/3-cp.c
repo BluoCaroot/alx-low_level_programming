@@ -37,8 +37,8 @@ void close_file(int fd)
 }
 /**
  * main - Copies the content from one file to another
- * @argc - number of args
- * @argv - array of args
+ * @argc: number of args
+ * @argv: array of args
  * Return: 0 on success
  */
 int main(int argc, char **argv)
