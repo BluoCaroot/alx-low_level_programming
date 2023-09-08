@@ -36,6 +36,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 }
 
+/**
+ * add_node - adds node at begining of list
+ * @head: first element of linked list
+ * @key: key of element
+ * @value: value
+ * Returns: pointer to element or NULL if fail
+ */
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 {
 	hash_node_t *new = malloc(sizeof(hash_node_t));
