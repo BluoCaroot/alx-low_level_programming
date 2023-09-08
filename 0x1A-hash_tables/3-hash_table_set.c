@@ -9,9 +9,28 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned int index;
+	int found = 0;
+	hash_node_t curr;
 
-	index = key_index((unsigned char *)key, ht->size);
-	if (!add_node(&(ht->array[index]), key, value))
+	if (!ht || !key || !value || key[0] == '\0')
+		return (0);
+	index = key_index((const unsigned char *)key, ht->size);
+
+	curr = ht->array[index];
+	while (curr)
+	{
+		if (!strcmp(curr->key, key))
+		{
+			free(curr->value);
+			curr->value = strdup(value);
+			if (!curr->value)
+				return (0);
+			found = 1;
+			break;
+		}
+		curr = curr->next;
+	}
+	if (!found && !add_node(&(ht->array[index]), key, value))
 		return (0);
 	else
 		return (1);
@@ -24,7 +43,18 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 	if (!new)
 		return (NULL);
 	new->key = strdup(key);
+	if (!new->key)
+	{
+		free(new);
+		return (NULL);
+	}
 	new->value = strdup(value);
+	if (!new->value)
+	{
+		free(new);
+		free(new->key);
+		return (NULL);
+	}
 	new->next = *head;
 	*head = new;
 	return (*head);
