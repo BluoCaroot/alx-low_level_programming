@@ -20,6 +20,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (!strcmp(key, curr->key))
 			return (curr->value);
+		curr = curr->next;
 	}
 	return (NULL);
 }
