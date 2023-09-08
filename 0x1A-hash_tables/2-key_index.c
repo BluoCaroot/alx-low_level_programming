@@ -1,4 +1,4 @@
-#include "hash_tables.c"
+#include "hash_tables.h"
 /**
  * key_index - return index of the given key's value
  * @key: the key given by user
