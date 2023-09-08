@@ -41,7 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * @head: first element of linked list
  * @key: key of element
  * @value: value
- * Returns: pointer to element or NULL if fail
+ * Return: pointer to element or NULL if fail
  */
 hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 {
